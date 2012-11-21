@@ -1,0 +1,119 @@
+<B><FONT FACE="Courier New" SIZE=2><P>Text Entry Commands</B> (Used to start text entry)</P>
+<B><P>a</B> Append text following current cursor position</P>
+<B><P>A</B> Append text to the end of current line</P>
+<B><P>i</B> Insert text before the current cursor position</P>
+<B><P>I</B> Insert text at the beginning of the cursor line</P>
+<B><P>o</B> Open up a new line following the current line and add text there</P>
+<B><P>O</B> Open up a new line in front of the current line and add text there</P>
+</FONT><B><P>The following commands are used only in the commands mode. </P>
+
+<FONT FACE="Courier New" SIZE=2><P>Cursor Movement Commands</P>
+</B><P>h Moves the cursor one character to the left</P>
+<P>l Moves the cursor one character to the right</P>
+<P>k Moves the cursor up one line </P>
+<P>j Moves the cursor down one line</P>
+<P>nG or :n Cursor goes to the specified (n) line</P>
+<I><P>(ex. 10G goes to line 10)</P>
+</I><P>^F (CTRl F) Forward screenful</P>
+<P>^B Backward screenful</P>
+<P>^f One page forward</P>
+<P>^b One page backward</P>
+<P>^U Up half screenful</P>
+<P>^D Down half screenful</P>
+<P>$ Move cursor to the end of current line</P>
+<P>0 (zero) Move cursor to the beginning of current line</P>
+<P>w Forward one word</P>
+<P>b Backward one word</P>
+
+<B><P>Exit Commands</P>
+</B><P>:wq Write file to disk and quit the editor</P>
+<P>:q! Quit (no warning)</P>
+<P>:q Quit (a warning is printed if a modified file has not been saved)</P>
+<P>ZZ Save workspace and quit the editor (same as :wq)</P>
+<P>: 10,25 w temp </P>
+<P>write lines 10 through 25 into file named temp. Of course, other line</P>
+<P>numbers can be used. (Use :f to find out the line numbers you want.</P>
+<B><P>&nbsp;</P>
+	
+<P>Text Deletion Commands</P>
+</B><P>x Delete character</P>
+<P>dw Delete word from cursor on</P>
+<P>db Delete word backward</P>
+<P>dd Delete line</P>
+<P>d$ Delete to end of line</P>
+<P>d^ (d caret, not CTRL d) Delete to beginning of line</P>
+
+<B><P>Yank</B> (has most of the options of delete)-- VI's <B>copy</B> commmand</P>
+<P>yy yank current line</P>
+<P>y$ yank to end of current line from cursor</P>
+<P>yw yank from cursor to end of current word</P>
+<P>5yy yank, for example, 5 lines</P>
+
+<B><P>Paste</B> (used after delete or yank to recover lines.) </P>
+<P>p paste below cursor </P>
+<P>P paste above cursor</P>
+<P>"2p paste from buffer 2 (there are 9)</P>
+<P>u Undo last change</P>
+<P>U Restore line</P>
+<P>J Join next line down to the end of the current line</P>
+
+<B><P>File Manipulation Commands</P>
+</B><P>:w Write workspace to original file</P>
+<P>:w file Write workspace to named file</P>
+<P>:e file Start editing a new file</P>
+<P>:r file Read contents of a file to the workspace</P>
+<B><P>To create a page break,</B> while in the insert mode, press the CTRL key</P>
+<P>And l. ^L will appear in your text and will cause the printer to start</P>
+<P>A new page.</P>
+<P>&nbsp;</P>
+<B><P>&nbsp;</P>
+	
+<P>Other Useful Commands</P>
+</B><P>Most commands can be repeated n times by typing a number, n, before</P>
+<P>the command. For example 10dd means delete 10 lines.</P>
+<P>. Repeat last command</P>
+<P>cw Change current word to a new word</P>
+<P>r Replace one character at the cursor position</P>
+<P>R Begin overstrike or replace mode – use ESC key to exit</P>
+<P>:/ pattern Search forward for the pattern</P>
+<P>:? pattern Search backward for the pattern</P>
+<P>n (used after either of the 2 search commands above to</P>
+<P>continue to find next occurrence of the pattern.</P>
+<P>:g/pat1/s//pat2/g replace every occurrence of pattern1 (pat1) with</P>
+<P>pat2</P>
+<B><P>Example :</B>g/tIO/s//Ada.Text_IO/g</P>
+<P>This will find and replace tIO by Ada.text_IO everywhere in the file.</P>
+<P>:g/a/s// /g replace the letter a, by blank</P>
+<P>:g/a/s///g replace a by nothing</P>
+<P>note: Even this command be undone by u </P>
+</FONT><FONT SIZE=2><P>&nbsp;</P>
+</FONT><B><FONT SIZE=4><P>Examples </P>
+</FONT><P>Opening a New File</P>
+</B><P>Step 1&#9;&#9;&#9;type&#9;<B>vim <I>filename</B></I>&#9;(create a file named <I>filename</I>)</P>
+<P>Step 2&#9;&#9;&#9;type&#9;<B>i</B>&#9;&#9;( switch to insert mode)</P>
+<P>Step 3&#9;&#9;&#9;enter text&#9;&#9;(enter your Ada program)</P>
+<P>Step 4&#9;&#9;&#9;hit&#9;<B>Esc key</B>&#9;(switch back to command mode)</P>
+<P>Step 5&#9;&#9;&#9;type&#9;<B>:wq</B>&#9;&#9;(write file and exit vim)</P>
+<B><P>&nbsp;</P>
+<P>Editing the Existing File</P>
+</B><P>Step 1&#9;&#9;&#9;type&#9;<B>vim <I>filename</B></I>&#9;(edit the existing file named filename)</P>
+<P>Step 2&#9;&#9;&#9;move around the file using <B>h</B>/<B>j</B>/<B>k</B>/<B>l</B> key or any appropriate command</P>
+<P>&#9;&#9;&#9;<B><FONT FACE="Courier New" SIZE=2>h</B> Moves the cursor one character to the left</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<B><P>l</B> Moves the cursor one character to the right</P>
+<B><P>k</B> Moves the cursor up one line </P>
+<B><P>j</B> Moves the cursor down one line</P>
+<B><P>nG</B> or :n Cursor goes to the specified (n) line</P>
+<I><P>(ex. 10G goes to line 10)</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+</I></FONT><P>Step 3&#9;&#9;&#9;<B>edit</B> required text (replace or delete or insert) </P>
+<P>Step 4&#9;&#9;&#9;hit <B>Esc</B> key &#9;(exit from insert mode if you insert or replace text)</P>
+<P>Step 5&#9;&#9;&#9;type&#9;<B>:wq</P>
+</B></BODY>
+</HTML>
