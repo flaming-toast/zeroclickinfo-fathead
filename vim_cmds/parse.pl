@@ -37,9 +37,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Cursor/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Cursor/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@entry_k) {
 			print "$keyword\t@blab\n";
@@ -49,9 +50,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Exit/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Exit/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@movement_k) {
 			print "$keyword\t@blab\n";
@@ -61,9 +63,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Commands/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Commands/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@exit_k) {
 			print "$keyword\t@blab\n";
@@ -73,9 +76,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Yank/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Yank/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@delete_k) {
 			print "$keyword\t@blab\n";
@@ -85,9 +89,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Paste/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Paste/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@copy_k) {
 			print "$keyword\t@blab\n";
@@ -97,9 +102,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Commands/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Commands/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@paste_k) {
 			print "$keyword\t@blab\n";
@@ -109,9 +115,10 @@ while (my $line = <RADFORD>) {
 		my @blab = ();
 		$line = <RADFORD>;
 		push(@blab, &parse_br($line));
-		while (!($line =~ m/Other/)) {
-			push(@blab, &parse_br($line));
 			$line = <RADFORD>;
+		while (!($line =~ m/Other/)) {
+			$line = <RADFORD>;
+			push(@blab, &parse_br($line));
 		}
 		foreach my $keyword (@file_k) {
 			print "$keyword\t@blab\n";
